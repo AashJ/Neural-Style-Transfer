@@ -1,7 +1,7 @@
 # Neural-Style-Transfer
 Image 1: Content Image || Image 2: Style Image || Image 3: Result
 
-![alt text](/Images/Initial_Image.JPEG)
+![initial](/Images/Initial_Image.JPEG | 400x400) ![style](/Images/Style.jpg | 400x400) ![Result](/Images/StyleTransfer.png | 400x400)
 
 Neural style transfer is the process of transforming an initial iamge into the 'style' of another image. In September 2015, Gatys et. al. published a paper called 'A Neural Algorithm of Artistic Style' detailing this process. The intuition is rather simple, if we can formulate an algorithm to recreate the 'content' of an image and formulate an algorithm to recreate the 'style' of an image, we can combine the two to perform style transfer.
 
