@@ -38,7 +38,7 @@ What is interesting, however, is the way in which you combine the two. Taking th
 1. Train a network to perform this style transfer itself. This can be done in one pass through of a CNN. My current process takes quite a bit of time per image, as we're repeating the 'training' process for each style. Instead, we can create a network that has learned to create images of a particular style and then just do one pass through this network.
 
 2. Super resolution: This is [an example](https://github.com/tetrachrome/subpixel) of an implementation of super resolution. This would require training a network to deconvolve images through interpolation. From my understanding, the algorithm learns how to make these interpolations, allowing us to upsample images. This [paper]
- (https://arxiv.org/abs/1603.08155) also details super resolution. Possible applications include photo restoration, compression, etc.
+(https://arxiv.org/abs/1603.08155) also details super resolution. Possible applications include photo restoration, compression, etc.
 
 
 ## Acknowledgements.
