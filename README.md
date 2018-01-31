@@ -4,7 +4,7 @@ Image 1: Content Image || Image 2: Style Image || Image 3: Result
 <img src="/Images/Initial_Image.JPEG" width="250"> <img src="/Images/Style.jpg" width="250"> <img src="/Images/StyleTransfer.png" width="250"> 
 
 
-Neural style transfer is the process of transforming an initial iamge into the 'style' of another image. In September 2015, Gatys et. al. published a paper called 'A Neural Algorithm of Artistic Style' detailing this process. The intuition is rather simple, if we can formulate an algorithm to recreate the 'content' of an image and formulate an algorithm to recreate the 'style' of an image, we can combine the two to perform style transfer.
+Neural style transfer is the process of transforming an initial image into the 'style' of another image. In September 2015, Gatys et. al. published a paper called 'A Neural Algorithm of Artistic Style' detailing this process. The intuition is rather simple: if we can formulate an algorithm to recreate the 'content' of an image and formulate an algorithm to recreate the 'style' of an image, we can combine the two to perform style transfer.
 
 ## Content creation
 
@@ -14,7 +14,7 @@ Thus, content transfer is simply optimizing the MSE that comes out of a convolut
 
 ## Style creation
 
-Similarly, the style creation algorithm must also have a lost function which it can optimize. We use multiple convolutional layers to capture some of the 'texture' information through the images. On top of this, we correlate the convolutional output with the Gram Matrix. Unfortunately, understanding what the Gram Matrix does exactly requires mathematical knowledge beyond the scope of this writeup, however I'll try to provide some intuition. As the Gram Matrix is the inner product between the matrix and its transpose, we're essentially throwing away all spatial information in our loss function. Therefore, you can think of the Gram Matrix as making sure the loss function only takes into account the 'style' of the image and not the 'content'.
+Similarly, the style creation algorithm must also have a lost function which it can optimize. We use multiple convolutional layers to capture some of the 'texture' information through the images. On top of this, we correlate the convolutional output with the Gram Matrix. Unfortunately, understanding what the Gram Matrix does exactly requires mathematical knowledge beyond the scope of this writeup; however I'll try to provide some intuition. As the Gram Matrix is the inner product between the matrix and its transpose, we're essentially throwing away all spatial information in our loss function. Therefore, you can think of the Gram Matrix as making sure the loss function only takes into account the 'style' of the image and not the 'content'.
 
 We do have some variation in how we weight each convolutional layer -- these are constants with can, and should, be played around with for each image. 
 
@@ -40,6 +40,6 @@ What is interesting, however, is the way in which you combine the two. Taking th
 2. Super resolution: This is [an example](https://github.com/tetrachrome/subpixel) of an implementation of super resolution. This would require training a network to deconvolve images through interpolation. From my understanding, the algorithm learns how to make these interpolations, allowing us to upsample images. This [paper](https://arxiv.org/abs/1603.08155) also details super resolution. Possible applications include photo restoration, compression, etc.
 
 
-## Acknowledgements.
+## Acknowledgements
 
 Most of this notebook comes from Jeremy Howard's fast.ai course (Lesson 8). This is simply my explanation for my own understanding of what is going on, as well as a few experiments and further thoughts.
